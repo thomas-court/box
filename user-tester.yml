@@ -1,0 +1,7 @@
+---
+name: user-tester
+repositories: []
+requirements: []
+run: |
+  whoami
+user: test

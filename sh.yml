@@ -1,0 +1,9 @@
+---
+name: sh
+repositories: []
+requirements: []
+
+run: |
+  sh $ARGS
+
+user: sh-test

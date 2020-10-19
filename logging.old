@@ -1,0 +1,34 @@
+[loggers]
+keys=root
+
+[logger_root]
+level=DEBUG
+handlers=file
+
+[formatters]
+keys=simple,complex
+
+[formatter_simple]
+format=%(asctime)s - %(name)s - %(levelname)s - %(message)s
+
+[formatter_complex]
+format=%(asctime)s - %(name)s - %(levelname)s - %(module)s : %(lineo)d - %(message)s
+
+[handlers]
+keys=file,screen
+
+[handler_file]
+class=handlers.TimeRotatingFileHandler
+interval=midnight
+backupCount=5
+formatter=simple
+level=DEBUG
+args=('/tmp/box.log',)
+
+[handler_screen]
+class=StreamHandler
+formatter=simple
+level=DEBUG
+args=(sys.stdout,)
+
+
